@@ -5,8 +5,9 @@ Decide if you are using the microsoft TRE or if your using a local fork.
 We recommend a fork so create a fork in your organisation of https://github.com/microsoft/AzureTRE (AzureTRE)  
 
 
-## Prerequisits. 
+## Prerequisites
 
+Create at least one environment in the new repository. By default we recommend dev/test/prod  
 You will need VSCODE and DOCKER installed locally.  
 You will need a Personal Access Token created for GIT. You can do this via the UI. (PAT)  
 Create a new resource group in the subscription your deploying to.   
@@ -14,13 +15,14 @@ Create an empty image galary inside that resource group and make note of the res
 Edit .devcontainer/devcontainer.json and ensure your putting the correct TAG version e.g. "OSS_VERSION": "v0.14.1"  
 Edit .devcontainer/scripts/install-azure-tre-oss.sh and ensure the org is correct http://github.com/(AzureTRE)/AzureTRE/archive/${oss_version}.tar.gz  
 
+### Running The Code
 
-### Prerequisites
+Clode down the AzureTRE-Deployment repository to your laptop.  
+Open in VSCODE an then reopen in dev container.  
+Copy "config.sample.yaml" to "config.yaml".  
+Edit "config.yaml" and change all the entries referencing "__CHANGE_ME__" on lines where they are not commented out. 
 
-To work with devcontainers you will need:
 
-- [Visual Studio Code](https://code.visualstudio.com)
-- [Remote containers extension for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
 
 ## Contributing
 
