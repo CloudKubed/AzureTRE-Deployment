@@ -1,0 +1,71 @@
+---
+name: Get Token
+
+on:
+  # schedule:
+    # Every 2 hours
+    # - cron: "0 1 * * *"
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: The environment to run this workflow in
+        type: environment
+        default: Dev
+        required: true
+
+concurrency: "${{ github.workflow }}-${{ github.ref }}"
+permissions:
+  contents: write
+  id-token: write
+  issues: write
+  deployments: write
+
+jobs:
+  get-token:
+    name: "Get Token"
+    runs-on: ubuntu-latest
+    environment: ${{ inputs.environment }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Get Token
+        shell: bash
+        run: |
+          resp=$(curl -Ssl -X POST "https://login.microsoftonline.com/${{ secrets.AAD_TENANT_ID }}/oauth2/v2.0/token" \
+          --data-urlencode "client_id=${{ secrets.API_CLIENT_ID }}" \
+          --data-urlencode 'scope=https://graph.microsoft.com/.default' \
+          --data-urlencode "client_secret=${{ secrets.API_CLIENT_SECRET }}" \
+          --data-urlencode 'grant_type=client_credentials')
+
+          access_token=$(echo $resp | jq '.access_token')
+          echo "TOKEN=${access_token}" >> $GITHUB_ENV
+          echo "::notice title=Token::${access_token}"
+          echo $access_token
+      - name: Set Token Var
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+        run: |
+          set -vx
+          echo "::notice title=Token::${TOKEN}"
+          gh variable set TOKEN --env "dev" --body "$TOKEN"
+      - name: Check API Health
+        run: |
+          resp=$(curl -X GET "https://cktredev.uksouth.cloudapp.azure.com/api/health" \
+            -H "Authorization: Bearer ${TOKEN}")
+          echo $resp | jq '.'
+      - name: Get API Costs
+        run: |
+          resp=$(curl -X GET "https://cktredev.uksouth.cloudapp.azure.com/api/costs?granularity=Daily" \
+            -H "Authorization: Bearer ${TOKEN}")
+          echo $resp
+             
+   
+# $ch = curl_init("https://cktredev.uksouth.cloudapp.azure.com/api/health")
+# $authorization = "Authorization: Bearer ${TOKEN}"
+# curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json' , $authorization ));
+# curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+# $result = curl_exec($ch);
+# curl_close($ch);
+# echo json_decode($result);

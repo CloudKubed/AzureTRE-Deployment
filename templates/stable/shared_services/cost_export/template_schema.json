@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "./templates/beta/shared_services/cost_export/template_schema.json",
+  "type": "object",
+  "title": "Cost Export Shared Service",
+  "description": "A shared service exporting costs to csv",
+  "properties": {},
+  "pipeline": {
+    "install": [
+      {
+        "stepId": "main"
+      }
+    ],
+    "upgrade": [
+      {
+        "stepId": "main"
+      }
+    ],
+    "uninstall": [
+      {
+        "stepId": "main"
+      }
+    ]
+  }
+}
