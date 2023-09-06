@@ -9,7 +9,7 @@ oss_version="$1"
 oss_home="$2"
 archive=/tmp/AzureTRE.tar.gz
 
-wget -O "$archive" "http://github.com/microsoft/AzureTRE/archive/${oss_version}.tar.gz" --progress=dot:giga
+wget -O "$archive" "http://github.com/cloudkubed/AzureTRE/archive/${oss_version}.tar.gz" --progress=dot:giga
 
 mkdir -p "$oss_home"
 tar -xzf "$archive" -C "$oss_home" --strip-components=1
