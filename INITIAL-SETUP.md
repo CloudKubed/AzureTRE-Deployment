@@ -1,7 +1,8 @@
 # Templating this repository
 
 Select "Use This Template" and create a repository within the organisation required. 
-Decide if you are using the microsoft TRE or if your using a local fork. We recommend a fork so create a fork in your organisation of https://github.com/microsoft/AzureTRE (AzureTRE)  
+Decide if you are using the microsoft TRE or if your using a local fork.  
+We recommend a fork so create a fork in your organisation of https://github.com/microsoft/AzureTRE (AzureTRE)  
 
 
 ## Prerequisits. 
