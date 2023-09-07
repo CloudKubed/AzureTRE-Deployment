@@ -21,8 +21,16 @@ Clode down the AzureTRE-Deployment repository to your laptop.
 Open in VSCODE an then reopen in dev container.  
 Copy "config.sample.yaml" to "config.yaml".  
 Edit "config.yaml" and change all the entries referencing "__CHANGE_ME__" on lines where they are not commented out. 
-
-
+```
+make auth
+```
+Config.yaml has now been updated. next we need to setup git using the environment and PAT token.
+```
+./setup_git_environment.sh <env> (PAT)
+```
+After this script has run, you will find it has echo'ed out part of the azure_credentials. get the client id for the secret and the secret itself and update AZURE_CREDENTIALS in the git secrets of the environment.   
+While your there, update the RP_BUNDLES variable with the value of the (GAL_ID)  
+Review the custom tag values. these need to be the Key's required on the organisation and a list of enums for the values.  
 
 ## Contributing
 
