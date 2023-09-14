@@ -496,6 +496,10 @@ jobs:
               BUNDLE_TYPE: "shared_service",
               BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/shared_services/databricks-auth/"
             }
+          - {
+              BUNDLE_TYPE: "shared_service",
+              BUNDLE_DIR: "./templates/stable/shared_services/airlock_notifier/"
+            }   
           #REGISTERSHAREDBUNDLES
     environment: ${{ inputs.environmentName }}
     steps:
