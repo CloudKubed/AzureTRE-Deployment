@@ -121,6 +121,24 @@ inputs:
     description: "JSON string containing key/value pairs to injet into the Resource Processor as ENV vars"
     required: false
     default: ""
+  CUSTOM_TAG_KEY_1:
+    description: ""
+    required: false
+  CUSTOM_TAG_KEY_2:
+    description: ""
+    required: false
+  CUSTOM_TAG_KEY_3:
+    description: ""
+    required: false
+  CUSTOM_TAG_KEY_4:
+    description: ""
+    required: false
+  CUSTOM_TAG_KEY_5:
+    description: ""
+    required: false
+  CUSTOM_TAG_KEY_6:
+    description: ""
+    required: false
 
 runs:
   using: composite
@@ -206,6 +224,12 @@ runs:
             && inputs.CORE_ADDRESS_SPACE) || '10.0.0.0/22' }}" \
           -e TF_VAR_tre_address_space="${{ (inputs.TRE_ADDRESS_SPACE != ''
             && inputs.TRE_ADDRESS_SPACE) || '10.0.0.0/16' }}" \
+          -e TF_VAR_custom_tag_key_1="${{ inputs.CUSTOM_TAG_KEY_1 }}" \
+          -e TF_VAR_custom_tag_key_2="${{ inputs.CUSTOM_TAG_KEY_2 }}" \
+          -e TF_VAR_custom_tag_key_3="${{ inputs.CUSTOM_TAG_KEY_3 }}" \
+          -e TF_VAR_custom_tag_key_4="${{ inputs.CUSTOM_TAG_KEY_4 }}" \
+          -e TF_VAR_custom_tag_key_5="${{ inputs.CUSTOM_TAG_KEY_5 }}" \
+          -e TF_VAR_custom_tag_key_6="${{ inputs.CUSTOM_TAG_KEY_6 }}" \
           -e API_CLIENT_ID="${{ inputs.API_CLIENT_ID }}" \
           -e AAD_TENANT_ID="${{ inputs.AAD_TENANT_ID }}" \
           -e TRE_ID="${{ inputs.TRE_ID }}" \

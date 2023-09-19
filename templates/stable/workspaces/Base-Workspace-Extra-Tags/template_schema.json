@@ -1,8 +1,8 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema",
-  "$id": "./templates/workspaces/base/template_schema.json",
+  "$id": "./templates/workspaces/stable/Base-Workspace-Extra-Tags/template_schema.json",
   "type": "object",
-  "title": "Base Workspace Extra Tags",
+  "title": "Base Workspace with Tags",
   "description": "This workspace template is the foundation for TRE workspaces.",
   "required": [
     "auth_type",
@@ -68,18 +68,6 @@
         "Manual"
       ],
       "updateable": true
-    },
-    "custom_tag_key_1": {
-      "type": "string",
-      "default": "custom_tag_key_name_1"
-    },
-    "custom_tag_key_2": {
-      "type": "string",
-      "default": "custom_tag_key_name_2"
-    },
-    "custom_tag_key_3": {
-      "type": "string",
-      "default": "custom_tag_key_name_3"
     }
   },
   "allOf": [
@@ -95,35 +83,42 @@
         ]
       },
       "then": {
-        "required": [
-          "custom_tag_value_1",
-          "custom_tag_value_2",
-          "custom_tag_value_3"
-        ],
         "properties": {
-          "custom_tag_value_3": {
-            "title": "custom_tag_key_name_3",
+          "custom_tag_value_1": {
+            "title": "custom_tag_key_name_1",
             "type": "string",
             "description": "",
-            "enum": [
-              "custom_tag_enum_3"
-            ]
+            "default": ""
           },
           "custom_tag_value_2": {
             "title": "custom_tag_key_name_2",
             "type": "string",
             "description": "",
-            "enum": [
-              "custom_tag_enum_2"
-            ]
+            "default": ""
           },
-          "custom_tag_value_1": {
-            "title": "custom_tag_key_name_1",
+          "custom_tag_value_3": {
+            "title": "custom_tag_key_name_3",
             "type": "string",
             "description": "",
-            "enum": [
-              "custom_tag_enum_1"
-            ]
+            "default": ""
+          },
+          "custom_tag_value_4": {
+            "title": "custom_tag_key_name_4",
+            "type": "string",
+            "description": "",
+            "default": ""
+          },
+          "custom_tag_value_5": {
+            "title": "custom_tag_key_name_5",
+            "type": "string",
+            "description": "",
+            "default": ""
+          },
+          "custom_tag_value_6": {
+            "title": "custom_tag_key_name_6",
+            "type": "string",
+            "description": "",
+            "default": ""
           }
         }
       }
@@ -343,12 +338,12 @@
       "description",
       "overview",
       "custom_tags",
-      "custom_tag_key_3",
-      "custom_tag_value_3",
-      "custom_tag_key_2",
-      "custom_tag_value_2",
-      "custom_tag_key_1",
       "custom_tag_value_1",
+      "custom_tag_value_2",
+      "custom_tag_value_3",
+      "custom_tag_value_4",
+      "custom_tag_value_5",
+      "custom_tag_value_6",
       "shared_storage_quota",
       "app_service_plan_sku",
       "address_space_size",

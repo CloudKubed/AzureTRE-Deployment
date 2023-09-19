@@ -167,6 +167,42 @@
       }
     },
     {
+      "name": "custom_tag_key_4",
+      "source": {
+        "env": "CUSTOM_TAG_KEY_4"
+      }
+    },
+    {
+      "name": "custom_tag_value_4",
+      "source": {
+        "env": "CUSTOM_TAG_VALUE_4"
+      }
+    },
+    {
+      "name": "custom_tag_key_5",
+      "source": {
+        "env": "CUSTOM_TAG_KEY_5"
+      }
+    },
+    {
+      "name": "custom_tag_value_5",
+      "source": {
+        "env": "CUSTOM_TAG_VALUE_5"
+      }
+    },
+    {
+      "name": "custom_tag_key_6",
+      "source": {
+        "env": "CUSTOM_TAG_KEY_6"
+      }
+    },
+    {
+      "name": "custom_tag_value_6",
+      "source": {
+        "env": "CUSTOM_TAG_VALUE_6"
+      }
+    },
+    {
       "name": "enable_airlock",
       "source": {
         "env": "ENABLE_AIRLOCK"

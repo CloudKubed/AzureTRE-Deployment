@@ -526,6 +526,9 @@ jobs:
           CUSTOM_TAG_KEY_1: ${{ vars.CUSTOM_TAG_KEY_1 }}
           CUSTOM_TAG_KEY_2: ${{ vars.CUSTOM_TAG_KEY_2 }}
           CUSTOM_TAG_KEY_3: ${{ vars.CUSTOM_TAG_KEY_3 }}
+          CUSTOM_TAG_KEY_4: ${{ vars.CUSTOM_TAG_KEY_4 }}
+          CUSTOM_TAG_KEY_5: ${{ vars.CUSTOM_TAG_KEY_5 }}
+          CUSTOM_TAG_KEY_6: ${{ vars.CUSTOM_TAG_KEY_6 }}
 
   register_shared_bundles:
     name: Register Shared Bundles
@@ -546,10 +549,10 @@ jobs:
               BUNDLE_TYPE: "shared_service",
               BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/shared_services/admin-vm/"
             }
-          - {
-              BUNDLE_TYPE: "shared_service",
-              BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/shared_services/airlock_notifier/"
-            }
+          # - {
+          #     BUNDLE_TYPE: "shared_service",
+          #     BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/shared_services/airlock_notifier/"
+          #   }
           - {
               BUNDLE_TYPE: "shared_service",
               BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/shared_services/certs/"
@@ -582,7 +585,7 @@ jobs:
           ref: ${{ inputs.prRef }}
       - name: Replace Tags
         shell: bash
-        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}"
+        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}" "${{ vars.CUSTOM_TAG_KEY_4 }}" "${{ vars.CUSTOM_TAG_KEY_5 }}" "${{ vars.CUSTOM_TAG_KEY_6 }}"
       - name: Replace Tag Enums
         shell: bash
         run: bash ./.github/scripts/replace_tag_enums.sh ${{ matrix.BUNDLE_DIR }} '${{ vars.CUSTOM_TAG_ENUM_1 }}' '${{ vars.CUSTOM_TAG_ENUM_2 }}' '${{ vars.CUSTOM_TAG_ENUM_3 }}'
@@ -608,6 +611,9 @@ jobs:
           CUSTOM_TAG_KEY_1: ${{ vars.CUSTOM_TAG_KEY_1 }}
           CUSTOM_TAG_KEY_2: ${{ vars.CUSTOM_TAG_KEY_2 }}
           CUSTOM_TAG_KEY_3: ${{ vars.CUSTOM_TAG_KEY_3 }}
+          CUSTOM_TAG_KEY_4: ${{ vars.CUSTOM_TAG_KEY_4 }}
+          CUSTOM_TAG_KEY_5: ${{ vars.CUSTOM_TAG_KEY_5 }}
+          CUSTOM_TAG_KEY_6: ${{ vars.CUSTOM_TAG_KEY_6 }}
 
   register_bundles:
     name: Register Bundles
@@ -617,10 +623,10 @@ jobs:
       matrix:
         include:
           # bundles type can be inferred from the bundle dir (but this is more explicit)
-          - {
-              BUNDLE_TYPE: "workspace",
-              BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/workspaces/base"
-            }
+          # - {
+          #     BUNDLE_TYPE: "workspace",
+          #     BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/workspaces/base"
+          #   }
           - {
               BUNDLE_TYPE: "workspace",
               BUNDLE_DIR: "\\${AZURETRE_HOME}/templates/workspaces/airlock-import-review"
@@ -677,7 +683,7 @@ jobs:
           ref: ${{ inputs.prRef }}
       - name: Replace Tags
         shell: bash
-        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}"
+        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}" "${{ vars.CUSTOM_TAG_KEY_4 }}" "${{ vars.CUSTOM_TAG_KEY_5 }}" "${{ vars.CUSTOM_TAG_KEY_6 }}"
       - name: Replace Tag Enums
         shell: bash
         run: bash ./.github/scripts/replace_tag_enums.sh ${{ matrix.BUNDLE_DIR }} '${{ vars.CUSTOM_TAG_ENUM_1 }}' '${{ vars.CUSTOM_TAG_ENUM_2 }}' '${{ vars.CUSTOM_TAG_ENUM_3 }}'
@@ -703,6 +709,9 @@ jobs:
           CUSTOM_TAG_KEY_1: ${{ vars.CUSTOM_TAG_KEY_1 }}
           CUSTOM_TAG_KEY_2: ${{ vars.CUSTOM_TAG_KEY_2 }}
           CUSTOM_TAG_KEY_3: ${{ vars.CUSTOM_TAG_KEY_3 }}
+          CUSTOM_TAG_KEY_4: ${{ vars.CUSTOM_TAG_KEY_4 }}
+          CUSTOM_TAG_KEY_5: ${{ vars.CUSTOM_TAG_KEY_5 }}
+          CUSTOM_TAG_KEY_6: ${{ vars.CUSTOM_TAG_KEY_6 }}
 
   register_user_resource_bundles:
     name: Register User Resource Bundles
@@ -754,7 +763,7 @@ jobs:
           ref: ${{ inputs.prRef }}
       - name: Replace Tags
         shell: bash
-        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}"
+        run: bash ./.github/scripts/replace_tags.sh  ${{ matrix.BUNDLE_DIR }} "${{ vars.CUSTOM_TAG_KEY_1 }}" "${{ vars.CUSTOM_TAG_KEY_2 }}" "${{ vars.CUSTOM_TAG_KEY_3 }}" "${{ vars.CUSTOM_TAG_KEY_4 }}" "${{ vars.CUSTOM_TAG_KEY_5 }}" "${{ vars.CUSTOM_TAG_KEY_6 }}"
       - name: Replace Tag Enums
         shell: bash
         run: bash ./.github/scripts/replace_tag_enums.sh ${{ matrix.BUNDLE_DIR }} '${{ vars.CUSTOM_TAG_ENUM_1 }}' '${{ vars.CUSTOM_TAG_ENUM_2 }}' '${{ vars.CUSTOM_TAG_ENUM_3 }}'
@@ -781,6 +790,9 @@ jobs:
           CUSTOM_TAG_KEY_1: ${{ vars.CUSTOM_TAG_KEY_1 }}
           CUSTOM_TAG_KEY_2: ${{ vars.CUSTOM_TAG_KEY_2 }}
           CUSTOM_TAG_KEY_3: ${{ vars.CUSTOM_TAG_KEY_3 }}
+          CUSTOM_TAG_KEY_4: ${{ vars.CUSTOM_TAG_KEY_4 }}
+          CUSTOM_TAG_KEY_5: ${{ vars.CUSTOM_TAG_KEY_5 }}
+          CUSTOM_TAG_KEY_6: ${{ vars.CUSTOM_TAG_KEY_6 }}
 
   deploy_shared_services:
     name: Deploy shared services
@@ -863,3 +875,6 @@ jobs:
           CUSTOM_TAG_KEY_1: ${{ vars.CUSTOM_TAG_KEY_1 }}
           CUSTOM_TAG_KEY_2: ${{ vars.CUSTOM_TAG_KEY_2 }}
           CUSTOM_TAG_KEY_3: ${{ vars.CUSTOM_TAG_KEY_3 }}
+          CUSTOM_TAG_KEY_4: ${{ vars.CUSTOM_TAG_KEY_4 }}
+          CUSTOM_TAG_KEY_5: ${{ vars.CUSTOM_TAG_KEY_5 }}
+          CUSTOM_TAG_KEY_6: ${{ vars.CUSTOM_TAG_KEY_6 }}

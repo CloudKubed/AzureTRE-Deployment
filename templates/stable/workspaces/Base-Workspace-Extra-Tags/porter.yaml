@@ -117,23 +117,36 @@ parameters:
   - name: arm_environment
     type: string
   - name: custom_tag_key_1
-    default: "custom_tag_1"
     type: string
   - name: custom_tag_value_1
-    default: "custom_tag_1"
+    default: ""
     type: string
   - name: custom_tag_key_2
-    default: "custom_tag_2"
     type: string
   - name: custom_tag_value_2
-    default: "custom_tag_2"
+    default: ""
     type: string
   - name: custom_tag_key_3
-    default: "custom_tag_3"
     type: string
   - name: custom_tag_value_3
-    default: "custom_tag_3"
+    default: ""
     type: string
+  - name: custom_tag_key_4
+    type: string
+  - name: custom_tag_value_4
+    default: ""
+    type: string
+  - name: custom_tag_key_5
+    type: string
+  - name: custom_tag_value_5
+    default: ""
+    type: string
+  - name: custom_tag_key_6
+    type: string
+  - name: custom_tag_value_6
+    default: ""
+    type: string
+
 
 outputs:
   - name: app_role_id_workspace_owner
@@ -198,9 +211,16 @@ install:
         custom_tag_key_1: ${ bundle.parameters.custom_tag_key_1 }
         custom_tag_key_2: ${ bundle.parameters.custom_tag_key_2 }
         custom_tag_key_3: ${ bundle.parameters.custom_tag_key_3 }
+        custom_tag_key_4: ${ bundle.parameters.custom_tag_key_4 }
+        custom_tag_key_5: ${ bundle.parameters.custom_tag_key_5 }
+        custom_tag_key_6: ${ bundle.parameters.custom_tag_key_6 }
         custom_tag_value_1: ${ bundle.parameters.custom_tag_value_1 }
         custom_tag_value_2: ${ bundle.parameters.custom_tag_value_2 }
         custom_tag_value_3: ${ bundle.parameters.custom_tag_value_3 }
+        custom_tag_value_4: ${ bundle.parameters.custom_tag_value_4 }
+        custom_tag_value_5: ${ bundle.parameters.custom_tag_value_5 }
+        custom_tag_value_6: ${ bundle.parameters.custom_tag_value_6 }
+
       backendConfig:
         resource_group_name: ${ bundle.parameters.tfstate_resource_group_name }
         storage_account_name: ${ bundle.parameters.tfstate_storage_account_name }
@@ -244,9 +264,16 @@ upgrade:
         custom_tag_key_1: ${ bundle.parameters.custom_tag_key_1 }
         custom_tag_key_2: ${ bundle.parameters.custom_tag_key_2 }
         custom_tag_key_3: ${ bundle.parameters.custom_tag_key_3 }
+        custom_tag_key_4: ${ bundle.parameters.custom_tag_key_4 }
+        custom_tag_key_5: ${ bundle.parameters.custom_tag_key_5 }
+        custom_tag_key_6: ${ bundle.parameters.custom_tag_key_6 }
         custom_tag_value_1: ${ bundle.parameters.custom_tag_value_1 }
         custom_tag_value_2: ${ bundle.parameters.custom_tag_value_2 }
         custom_tag_value_3: ${ bundle.parameters.custom_tag_value_3 }
+        custom_tag_value_4: ${ bundle.parameters.custom_tag_value_4 }
+        custom_tag_value_5: ${ bundle.parameters.custom_tag_value_5 }
+        custom_tag_value_6: ${ bundle.parameters.custom_tag_value_6 }
+
       backendConfig:
         resource_group_name: ${ bundle.parameters.tfstate_resource_group_name }
         storage_account_name: ${ bundle.parameters.tfstate_storage_account_name }
@@ -313,9 +340,15 @@ uninstall:
         custom_tag_key_1: ${ bundle.parameters.custom_tag_key_1 }
         custom_tag_key_2: ${ bundle.parameters.custom_tag_key_2 }
         custom_tag_key_3: ${ bundle.parameters.custom_tag_key_3 }
+        custom_tag_key_4: ${ bundle.parameters.custom_tag_key_4 }
+        custom_tag_key_5: ${ bundle.parameters.custom_tag_key_5 }
+        custom_tag_key_6: ${ bundle.parameters.custom_tag_key_6 }
         custom_tag_value_1: ${ bundle.parameters.custom_tag_value_1 }
         custom_tag_value_2: ${ bundle.parameters.custom_tag_value_2 }
         custom_tag_value_3: ${ bundle.parameters.custom_tag_value_3 }
+        custom_tag_value_4: ${ bundle.parameters.custom_tag_value_4 }
+        custom_tag_value_5: ${ bundle.parameters.custom_tag_value_5 }
+        custom_tag_value_6: ${ bundle.parameters.custom_tag_value_6 }
       backendConfig:
         resource_group_name: ${ bundle.parameters.tfstate_resource_group_name }
         storage_account_name: ${ bundle.parameters.tfstate_storage_account_name }

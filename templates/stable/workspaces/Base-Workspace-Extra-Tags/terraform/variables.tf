@@ -146,3 +146,28 @@ variable "custom_tag_value_3" {
   type    = string
   default = ""
 }
+variable "custom_tag_key_4" {
+  type    = string
+  default = ""
+}
+variable "custom_tag_value_4" {
+  type    = string
+  default = ""
+}
+variable "custom_tag_key_5" {
+  type    = string
+  default = ""
+}
+variable "custom_tag_value_5" {
+  type    = string
+  default = ""
+}
+variable "custom_tag_key_6" {
+  type    = string
+  default = ""
+}
+variable "custom_tag_value_6" {
+  type    = string
+  default = ""
+}
+
