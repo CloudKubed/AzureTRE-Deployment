@@ -19,6 +19,8 @@ gh secret set MS_TEAMS_WEBHOOK_URI --env $env --body "dummy"
 # Adding value secrets
 gh variable set AZURE_ENVIRONMENT --env $env --body "AzureCloud"
 gh variable set ENABLE_SWAGGER --env $env --body "true"
+
+# For Tag Keys use "" around value in GitHub to e.g "Cost Centre"
 gh variable set CUSTOM_TAG_KEY_1 --env $env --body "custom_tag_key_1"
 gh variable set CUSTOM_TAG_KEY_2 --env $env --body "custom_tag_key_2"
 gh variable set CUSTOM_TAG_KEY_3 --env $env --body "custom_tag_key_3"
@@ -26,6 +28,7 @@ gh variable set CUSTOM_TAG_KEY_4 --env $env --body "custom_tag_key_4"
 gh variable set CUSTOM_TAG_KEY_5 --env $env --body "custom_tag_key_5"
 gh variable set CUSTOM_TAG_KEY_6 --env $env --body "custom_tag_key_6"
 
+# For Tag Enum List use "" around each value with comma separaters so "dev", "prod"
 gh variable set CUSTOM_TAG_ENUM_1 --env $env --body '"custom_tag_enum_1"'
 gh variable set CUSTOM_TAG_ENUM_2 --env $env --body '"custom_tag_enum_2"'
 gh variable set CUSTOM_TAG_ENUM_3 --env $env --body '"custom_tag_enum_3"'
