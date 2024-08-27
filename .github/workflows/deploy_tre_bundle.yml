@@ -1,5 +1,5 @@
 ---
-name: Deploy Azure TRE (Bundle)
+name: Deploy Azure TRE (bundle)
 # This workflow is the integration build run for pushes to the main branch
 # It also runs on a schedule, serving as the nightly build
 
