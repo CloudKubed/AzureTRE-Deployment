@@ -30,11 +30,6 @@ on: # yamllint disable-line rule:truthy
       bundleName:
         type: string
         description: Bundle Name
-
-      # bundleDir:
-      #   type: string
-      #   description: Bundle Directory e.g. ./templates/workspaces/base
-      #   default: ./templates/stable/workspaces/airlock-import-review
       workspaceName:
         type: string
         description: Workspace Name (Required if type is user_resource) tre-service-...
