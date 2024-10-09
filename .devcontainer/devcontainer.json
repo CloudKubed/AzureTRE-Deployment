@@ -12,7 +12,7 @@
       "DOCKER_GROUP_ID": "${localEnv:DOCKER_GROUP_ID}",
       "INTERACTIVE": "true",
       "OSS_REPO": "cloudkubed/AzureTRE",
-      "OSS_VERSION": "ck-orphaned-data"
+      "OSS_VERSION": "ck-orphaned-data2"
     }
   },
   "runArgs": [
